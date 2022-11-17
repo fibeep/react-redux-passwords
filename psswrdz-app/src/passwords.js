@@ -9,6 +9,7 @@ function generatePassword() {
 
 function Password() {
   const [password, setPassword] = useState("p@$$w0rd");
+  const [description, setDescription] = useState('description')
 
   return (
     <div>
@@ -21,6 +22,12 @@ function Password() {
         >
           Generate
         </button>
+      </div>
+      <div>
+        <input onChange={(e) => setPassword(e.target.value)} value={password} />
+      </div>
+      <div>
+        <input onChange={(e) => setDescription(e.target.value)} value={description} />
       </div>
     </div>
   );
