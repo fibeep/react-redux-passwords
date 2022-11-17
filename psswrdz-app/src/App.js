@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
 import Password from "./passwords";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducers from './reducers'
+
+const store = createStore(reducers)
 
 function App() {
   return (
-    <div className="App">
-      <Password />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Password />
+      </div>
+    </Provider>
   );
 }
 
